@@ -4,10 +4,10 @@ using OpenQA.Selenium.Chrome;
 
 namespace TesteTutoria.Tests
 {
-    public class UnitTest1
+    public class AoNavegarParaTelaDeCadastro
     {
         [Fact]
-        public void NavegarParaPaginaDeCadastro()
+        public void DeveConterBotaoComTextoCriarConta()
         {
             // arrange
             IWebDriver driver = new ChromeDriver();
@@ -21,7 +21,7 @@ namespace TesteTutoria.Tests
         }
 
         [Fact]
-        public void ImpedirCadastroComNomeVazio()
+        public void DeveImpedirCadastroComNomeVazio()
         {
 
         }
