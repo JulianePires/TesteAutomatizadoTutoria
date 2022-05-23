@@ -1,19 +1,24 @@
 using Xunit;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using TesteTutoria.Tests.Helpers;
 
 namespace TesteTutoria.Tests
 {
     public class AoNavegarParaTelaDeCadastro
     {
-        [Fact]
-        public void DeveConterBotaoComTextoCriarConta()
-        {
-            // arrange
-            IWebDriver driver = new ChromeDriver();
+        private readonly IWebDriver driver;
 
-            // act
-            driver.Navigate().GoToUrl("https://dev.tutor-ia.com/register");
+        public AoNavegarParaTelaDeCadastro()
+        {
+            driver = new ChromeDriver();
+            driver.Navigate().GoToUrl(TestHelpers.UrlPaginaCadastro);
+        }
+
+        [Fact]
+        public void DadoOChromeAbertoDeveConterBotaoComTextoCriarConta()
+        {
+         
             var buttonText = driver.FindElement(By.TagName("button")).Text;
 
             // assert
@@ -21,7 +26,7 @@ namespace TesteTutoria.Tests
         }
 
         [Fact]
-        public void DeveImpedirCadastroComNomeVazio()
+        public void DadoOChromeAbertoDeveImpedirCadastroComNomeVazio()
         {
 
         }
