@@ -2,10 +2,11 @@ using Xunit;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using TesteTutoria.Tests.Helpers;
+using System;
 
 namespace TesteTutoria.Tests
 {
-    public class AoNavegarParaTelaDeCadastro
+    public class AoNavegarParaTelaDeCadastro : IDisposable
     {
         private readonly IWebDriver driver;
 
@@ -13,6 +14,11 @@ namespace TesteTutoria.Tests
         {
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl(TestHelpers.UrlPaginaCadastro);
+        }
+
+        public void Dispose()
+        {
+            driver.Quit();
         }
 
         [Fact]
